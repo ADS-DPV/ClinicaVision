@@ -30,15 +30,13 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Login.php">Login</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Cadastro
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="CadastroPaciente.php">Cadastro de Paciente</a>
-                                <a class="dropdown-item" href="CadastroMedico.php">Cadastro de Médico</a>
-                                <a class="dropdown-item" href="CadastroConsulta.php">Cadastro de Consulta</a>                                
-                            </div>
-                            <a href="CadastroPaciente.php"></a>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="CadastroPaciente.php">Cadastro de Pacientes</a>
+                                    <a class="dropdown-item" href="CadastroFuncionario.php">Cadastro de Funcionários</a>
+                                    <a class="dropdown-item" href="CadastroConsulta.php">Cadastro de Consultas</a>                                
+                                </div>
+                                <a href="CadastroPaciente.php"></a>
                         </li>                        
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Consulta.php">Consulta</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Relatorio.php">Relatórios</a></li>
@@ -94,11 +92,11 @@
                             </div>
                             <div class="form-group">
                                 <select class="form-control form-control-lg" id="exampleFormControlSelect1">
-                                    <option>Plano de saude1</option>
-                                    <option>Plano de saude1</option>
-                                    <option>Plano de saude1</option>
-                                    <option>Plano de saude1</option>
-                                    <option>outraForma</option>                                    
+                                    <option>AMIL</option>
+                                    <option>BRADESCO SAÚDE</option>
+                                    <option>GAMA SAÚDE</option>
+                                    <option>STF – MED</option>
+                                    <option>Outra forma</option>                                    
 
                                 </select>
                             </div>

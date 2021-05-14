@@ -30,13 +30,12 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Login.php">Login</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Cadastro
-                            </a>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
+                              
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="CadastroPaciente.php">Cadastro de Paciente</a>
-                                <a class="dropdown-item" href="CadastroMedico.php">Cadastro de Médico</a>
-                                <a class="dropdown-item" href="CadastroConsulta.php">Cadastro de Consulta</a>                                
+                                <a class="dropdown-item" href="CadastroPaciente.php">Cadastro de Pacientes</a>
+                                <a class="dropdown-item" href="CadastroFuncionario.php">Cadastro de Funcionários</a>
+                                <a class="dropdown-item" href="CadastroConsulta.php">Cadastro de Consultas</a>                                
                             </div>
                             <a href="CadastroPaciente.php"></a>
                         </li>                        
@@ -52,7 +51,7 @@
         <section class="page-section" id="contact">
             <div class="container">
                 <!-- Contact Section Heading-->
-                <h2 class="text-center text-uppercase text-secondary mb-0">Cadastro de Médicos</h2>
+                <h2 class="text-center text-uppercase text-secondary mb-0">Cadastro de Funcionários</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -66,11 +65,17 @@
                         <form id="contactForm" name="sentMessage" novalidate="novalidate">
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Nome</label>
+                                    <label>Nome completo</label>
                                     <input class="form-control" id="name" type="text" placeholder="Nome" required="required" data-validation-required-message="Por favor, insira seu nome." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>CPF</label>
+                                    <input class="form-control" id="cpf" type="tel" placeholder="CPF" required="required" data-validation-required-message="Por favor, digite seu CPF." />
+                                    <p class="help-block text-danger"></p>
+                                </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Data de nascimento</label>
@@ -78,6 +83,12 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
+                                <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Endereço</label>
+                                    <input class="form-control" id="endereco" type="end" placeholder="Endereço" required="required" data-validation-required-message="Por favor, digite seu endereço." />
+                                    <p class="help-block text-danger"></p>
+                                </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Email</label>
@@ -92,8 +103,35 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
-                           
-                            
+                           <div class="form-group">
+                                <select class="form-control form-control-lg" id="exampleFormControlSelect1">
+                                    <option>Tipo de Funcionário</option>
+                                    <option>Gestor(a)</option>
+                                    <option>Médico(a)</option>
+                                    <option>Secretária(o)</option>
+                                 
+                                </select>
+                               
+                            </div>
+                                   <div class="form-group">
+                                <select class="form-control form-control-lg" id="exampleFormControlSelect1">
+                                    <option>Catarata</option>
+                                    <option>Cirurgia Plástica Ocular</option>
+                                    <option>Cirurgia Refrativa</option>
+                                    <option>Clínica geral em Oftalmologia</option>
+                                    <option>Estrabismo</option>
+                                    <option>Transplante de Córnea</option>
+                                 
+                                </select>
+                               
+                            </div> 
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>CRM</label>
+                                    <input class="form-control" id="crm" type="CRM" placeholder="CRM" required="required" data-validation-required-message="Por favor, digite seu CRM." />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
                             <br />
                             <div id="success"></div>
                             <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Cadastrar</button></div>
