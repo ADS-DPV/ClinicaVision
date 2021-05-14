@@ -7,6 +7,7 @@
         <meta name="author" content="" />
         <title>Clinica Vision</title>
         <!-- Favicon-->
+
         <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
@@ -21,7 +22,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-sm bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Clinica Vision</a>
+                <a class="navbar-brand js-scroll-trigger" href="index.html">Clinica Vision</a>
                 <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -29,7 +30,17 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Login.php">Login</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Cadastro.php">Cadastro</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Cadastro
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="CadastroPaciente.php">Cadastro de Paciente</a>
+                                <a class="dropdown-item" href="CadastroMedico.php">Cadastro de Médico</a>
+                                <a class="dropdown-item" href="CadastroConsulta.php">Cadastro de Consulta</a>                                
+                            </div>
+                            <a href="CadastroPaciente.php"></a>
+                        </li>                         
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Consulta.php">Consulta</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Relatorio.php">Relatórios</a></li>
 
@@ -42,19 +53,19 @@
         <br/><br/><br/>
 
         <div class="container-lg">
-        <ul class="nav nav-justified navbar-expand-sm" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Paciente</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Médico</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Consulta</a>
-            </li>
-        </ul>
+            <ul class="nav nav-justified navbar-expand-sm" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Paciente</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Médico</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Consulta</a>
+                </li>
+            </ul>
         </div>    
-            
+
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
@@ -66,7 +77,6 @@
                                 <th scope="col">Nome</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Telefone</th>
-                                <th scope="col">Exame</th>
                                 <th scope="col">Médico Responsável</th>
 
                             </tr>
@@ -77,7 +87,6 @@
                                 <td>Otto</td>
                                 <td>otto@mdo.com</td>
                                 <td>98435678k</td>
-                                <td>****</td>
                                 <td>Dr. Juan</td>
                                 <td><button type="button" class="btn btn-danger">X</button></td>
                                 <td><button type="button" class="btn btn-info">Editar</button></td>
@@ -142,12 +151,11 @@
                                 <th scope="col"></th>
                                 <th scope="col">Sintomas</th>
                                 <th scope="col">Especialidade</th>
-                                <th scope="col">Prescrição</th>
                                 <th scope="col">Plano de Saúde</th>
-                                
-                                
-                                
-                                
+
+
+
+
 
 
                             </tr>
@@ -160,11 +168,10 @@
                                 <td>>****</td>
                                 <td>****</td>
                                 <td>>****</td>
-                                <td>>****</td>
                                 <td><button type="button" class="btn btn-danger">X</button></td>
                                 <td><button type="button" class="btn btn-info">Editar</button></td>
                             </tr>
-                           
+
                         </tbody>
                     </table>
                 </div>
@@ -185,7 +192,7 @@
                         <p class="lead mb-0">
                             Centro Clínico Sudoeste
                             <br />
-                           CHSW bloco 3/4/5, sala 155
+                            CHSW bloco 3/4/5, sala 155
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
@@ -204,7 +211,7 @@
                             TEL: 61 3442 4040
                             <br>
                             Whatsapp: 61 99138-5844                            
-                                                    
+
                         </p>
                     </div>
                 </div>

@@ -21,7 +21,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-sm bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Clinica Vision</a>
+                <a class="navbar-brand js-scroll-trigger" href="index.html">Clinica Vision</a>
                 <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -29,7 +29,6 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Login.php">Login</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Cadastro.php">Cadastro</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Consulta.php">Consulta</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Relatorio.php">Relatórios</a></li>
 
@@ -39,28 +38,39 @@
         </nav>
         <br><br><br><br><br>
         <section class="page-section">
-            <div class="container-sm">
-                
-                    <div class="col-md-2 col-md-offset-5">
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Login</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted"></small>
+            <div class="container">
+                <div class="d-lg-inline justify-content-center h-100">
+                    <div class="card" style="width: 66rem; height: 30rem;">
+                        <div class="card-header">
+                            <h3>Logar</h3>                            
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Senha</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Login</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="Digite seu Login">                                    
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Senha</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Salvar Senha</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            </form>
                         </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">salvar senha</label>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-center links">
+                                Não tem conta?<a href="CadastroUsuario.php"> Cadastre-se</a>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <a href="#">Esqueceu sua senha?</a>
+                            </div>
                         </div>
-                        <br><br>
-                        <button type="submit" class="btn btn-primary">Entrar</button>
-                    </form>
                     </div>
-             
+                </div>
             </div>
         </section>
         <br><br><br>
@@ -87,13 +97,13 @@
                     <div class="col-lg-4">
                         <h4 class="text-uppercase mb-4">Contato</h4>
                         <p class="lead mb-0">
-                           Segunda a sexta de 8h às 20h.
+                            Segunda a sexta de 8h às 20h.
                             Sábados de 8h às 12h.
                             <br>
                             TEL: 61 3442 4040
                             <br>
                             Whatsapp: 61 99138-5844                          
-                              
+
                         </p>
                     </div>
                 </div>
