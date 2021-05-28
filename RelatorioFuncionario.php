@@ -1,3 +1,14 @@
+<?php
+include_once 'Model/DAO.php';
+include_once './config/Conexao.php';
+?>
+
+<script>
+    function setaDadosModal(valor) {
+        document.getElementById('idFuncionario').value = valor;
+
+    }
+</script>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -38,17 +49,15 @@
                                 <a class="dropdown-item" href="CadastroConsulta.php">Cadastro de Consultas</a>                                
                             </div>
                         </li>                         
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Consulta.php">Consulta</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Relatorio.php">Relatórios</a></li>
-                        <li class="nav-item mx-0 mx-lg-1">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Consulta.php">Consulta</a></li>                     
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Relatorios</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="RelatorioPaciente.php">Relatorio de Pacientes</a>
-                                <a class="dropdown-item" href="RelatorioFuncionario.php">Relatorio de Funcionários</a>
-                                <a class="dropdown-item" href="RelatorioConsulta.php">Relatorio de Consultas</a>                                
+                                <a class="dropdown-item" href="RelatorioPaciente.php">Relatório de Pacientes</a>
+                                <a class="dropdown-item" href="RelatorioFuncionario.php">Relatório de Funcionários</a>
+                                <a class="dropdown-item" href="RelatorioConsulta.php">Relatório de Consultas</a>                                
                             </div>
-                        </li> 
-
+                        </li>     
                     </ul>
                 </div>
             </div>
@@ -56,43 +65,132 @@
 
         <br/><br/><br/>
         <br/><br/><br/>
+        <br/><br/><br/>
 
 
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="Controller/FuncionarioControllerEditar.php/">
+                            <input class="form-control" name="idFuncionario" id="idFuncionario" type="hidden"/>
 
-        <div class="container-lg">
+
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                <label>Nome completo</label>
+                                <input class="form-control" id="name" name="nomeFuncionario" type="text" placeholder="Nome" required="required" data-validation-required-message="Por favor, insira seu nome." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                <label>CPF</label>
+                                <input class="form-control" id="cpf" name="cpf" type="tel" placeholder="CPF" required="required" data-validation-required-message="Por favor, digite seu CPF." />
+                                <p class="help-block text-danger"></p>
+                            </div>                            
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                <label>Endereço</label>
+                                <input class="form-control" id="endereco" name="endereco" type="end" placeholder="Endereço" required="required" data-validation-required-message="Por favor, digite seu endereço." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                <label>Email</label>
+                                <input class="form-control" id="email" name="emailFuncionario" type="email" placeholder="Email" required="required" data-validation-required-message="Por favor, insira o seu endereço de e-mail." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                <label>Telefone</label>
+                                <input class="form-control" id="phone" name="telFuncionario" type="tel" placeholder="Telefone" required="required" data-validation-required-message="Por favor, digite seu número de telefone." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <select name="tipoFuncionario" class="form-control form-control-lg" id="exampleFormControlSelect1">
+                                    <option>Tipo de Funcionário</option>
+                                    <option>Gestor(a)</option>
+                                    <option>Médico(a)</option>
+                                    <option>Secretária(o)</option>
+
+                                </select>
+                            </div>   
+
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                <label>Especialidade</label>
+                                <input class="form-control" id="name" name="especialidade" type="text" placeholder="Especialidade" required="required" data-validation-required-message="Por favor, insira seu nome." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                <label>CRM</label>
+                                <input class="form-control" id="crm" name="crmMedico" type="CRM" placeholder="CRM" required="required" data-validation-required-message="Por favor, digite seu CRM." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Editar</button></div>
+
+                            
+
+
+                        </form>    
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
             <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Nome</th>
                         <th scope="col">CPF</th>
-                        <th scope="col">Data Nascimento</th>
                         <th scope="col">Endereço</th>
                         <th scope="col">Email</th>
                         <th scope="col">Telefone</th>
                         <th scope="col">Tipo de Funcionário</th>
                         <th scope="col">CRM</th>
-                         <th scope="col">Botão Editar</th>
+                        <th scope="col">Especialidade</th>
+                        <th scope="col">Botão Editar</th>
                         <th scope="col">Botão Excluir</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>****</td>
-                        <td>****</td>
-                        <td>****</td>
-                        <td>****</td>
-                        <td>****</td>
-                        <td>****</td>
-                        <td>****</td>
-                        <td>****</td>
-                        <td><button type="button" class="btn btn-danger">X</button></td>
-                        <td><button type="button" class="btn btn-info">Editar</button></td>
+                        <?php
+                        $daop = new DAO();
+                        $result = $daop->pesquisaFuncionario();
+
+                        while ($row = $result->fetch(PDO::FETCH_OBJ)) {
+                            "<input class='form-control' name='idFuncionario' type='hidden' value='$row->idfuncionario'";
+                            echo '<form method="post" action="Controller/FuncionarioControllerExcluir.php/">';
+                            echo "<input class='form-control' name='idFuncionario' type='hidden' value='$row->idfuncionario'";
+                            echo "<tr><th>$row->idfuncionario</td>";
+                            echo "<td>$row->nomeFuncionario</td>";
+                            echo "<td>$row->cpf</td>";
+                            echo "<td>$row->endereco</td>";
+                            echo "<td>$row->emailFuncionario</td>";
+                            echo "<td>$row->TelFuncionario</td>";
+                            echo "<td>$row->TipoFuncionario</td>";
+                            echo "<td>$row->crmMedico</td>";
+                            echo "<td>$row->especialidade</td>";
+                            echo "<td><button type = 'SUBMIT' class = 'btn btn-danger'>X</button></td>";
+                            echo "<td><button type = 'button' class = 'btn btn-info'  data-toggle='modal' data-target='#exampleModal' onclick=setaDadosModal('$row->idfuncionario')>Editar</button></td></tr>";
+
+                            echo '</form>';
+                        }
+                        ?>
+
                     </tr>    
                 </tbody>
             </table>
         </div>
+        <br/><br/><br/>
+
         <br/><br/><br/>
         <br/><br/><br/>
         <br/><br/><br/>
@@ -139,7 +237,7 @@
                     <!-- This script automatically adds the current year to your website footer-->
                     <!-- (credit: https://updateyourfooter.com/)-->
                     <script>
-                        document.write(new Date().getFullYear());
+    document.write(new Date().getFullYear());
                     </script>
                 </small>
             </div>

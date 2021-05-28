@@ -1,3 +1,13 @@
+<?php
+include_once 'Model/DAO.php';
+include_once './config/Conexao.php';
+?>
+<script>
+    function setaDadosModal(valor) {
+        document.getElementById('idConsulta').value = valor;
+
+    }
+</script>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -38,25 +48,86 @@
                                 <a class="dropdown-item" href="CadastroConsulta.php">Cadastro de Consultas</a>                                
                             </div>
                         </li>                         
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Consulta.php">Consulta</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Relatorio.php">Relatórios</a></li>
-                        <li class="nav-item mx-0 mx-lg-1">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Consulta.php">Consulta</a></li>                     
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Relatorios</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="RelatorioPaciente.php">Relatorio de Pacientes</a>
-                                <a class="dropdown-item" href="RelatorioFuncionario.php">Relatorio de Funcionários</a>
-                                <a class="dropdown-item" href="RelatorioConsulta.php">Relatorio de Consultas</a>                                
+                                <a class="dropdown-item" href="RelatorioPaciente.php">Relatório de Pacientes</a>
+                                <a class="dropdown-item" href="RelatorioFuncionario.php">Relatório de Funcionários</a>
+                                <a class="dropdown-item" href="RelatorioConsulta.php">Relatório de Consultas</a>                                
                             </div>
-                        </li> 
-
+                        </li>     
                     </ul>
                 </div>
             </div>
         </nav>      
 
-        <br/><br/><br/>
-        <br/><br/><br/>
+<!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="Controller/ConsultaControllerEditar.php/">
+                            <input class="form-control" name="idConsulta" id="idConsulta" type=""/>
+                             <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Data da consulta</label>
+                                    <input class="form-control" name="datanascimento" id="datanascimento" type="date" placeholder="Data de nascimento" required="required" data-validation-required-message="Por favor, insira sua data de nascimento." />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>                           
+                            <br>
+                            <div class="form-group">
+                                <select class="form-control form-control-lg" name="tipoConsulta" id="exampleFormControlSelect1">
+                                    <option>Consulta</option>
+                                    <option>Retorno</option>
+                                    <option>Exames</option>
 
+
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control form-control-lg" name="especialidade" id="exampleFormControlSelect1">
+                                    <option>Catarata</option>
+                                    <option>Clínica geral</option>
+                                    <option>Cirurgia</option>
+                                    <option>Cirurgia Refrativa</option>
+                                    <option>Glaucoma</option>
+                                    <option>Plástica Ocular</option>
+
+
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Observação</label>
+                                    <textarea class="form-control" name="obsConsulta" id="message" rows="5" placeholder="Observação" required="required" data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Editar</button></div>
+
+                        </form>    
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        
+        
+        
+<br/><br/><br/>
+        <br/><br/><br/><br/><br/><br/>
+        <br/><br/><br/><br/><br/><br/>
+        <br/><br/><br/>
 
 
         <div class="container-lg">
@@ -64,31 +135,39 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">CPF</th>
-                        <th scope="col">Data Nascimento</th>
-                        <th scope="col">Endereço</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Telefone</th>
-                        <th scope="col">Tipo de Funcionário</th>
-                        <th scope="col">CRM</th>
-                         <th scope="col">Botão Editar</th>
+                        <th scope="col">data da Consulta</th>
+                        <th scope="col">Tipo da Consulta</th>
+                        <th scope="col">Especialidade</th>
+                        <th scope="col">Observação</th>
+                        <th scope="col">Paciente</th>
+                        <th scope="col">Funcionario</th>                                                                         
                         <th scope="col">Botão Excluir</th>
+                        <th scope="col">Botão Editar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>****</td>
-                        <td>****</td>
-                        <td>****</td>
-                        <td>****</td>
-                        <td>****</td>
-                        <td>****</td>
-                        <td>****</td>
-                        <td>****</td>
-                        <td><button type="button" class="btn btn-danger">X</button></td>
-                        <td><button type="button" class="btn btn-info">Editar</button></td>
+                         <?php
+                        $daop = new DAO();
+                        $result = $daop->pesquisaConsulta();
+
+                        while ($row = $result->fetch(PDO::FETCH_OBJ)) {
+                            "<input class='form-control' name='idUsuario' type='' value='$row->idConsulta'";
+                            echo '<form method="post" action="Controller/ConsultaControllerExcluir.php/">';
+                            echo "<input class='form-control' name='idConsulta' type='hidden' value='$row->idConsulta'";
+                            echo "<tr><th>$row->idConsulta</td>";
+                            echo "<td>$row->dataConsulta</td>";
+                            echo "<td>$row->tipoConsulta</td>";
+                            echo "<td>$row->especialidadeConsulta</td>";
+                            echo "<td>$row->obsConsulta</td>";
+                            echo "<td>$row->tbpaciente_idpaciente</td>";
+                            echo "<td>$row->tbFuncionario_idfuncionario</td>";
+                            echo "<td><button type = 'SUBMIT' class = 'btn btn-danger'>X</button></td>";
+                            echo "<td><button type = 'button' class = 'btn btn-info'  data-toggle='modal' data-target='#exampleModal' onclick=setaDadosModal('$row->idConsulta')>Editar</button></td></tr>";
+
+                            echo '</form>';
+                        }
+                        ?>
                     </tr>    
                 </tbody>
             </table>
@@ -96,6 +175,14 @@
         <br/><br/><br/>
         <br/><br/><br/>
         <br/><br/><br/>
+                <br/><br/><br/>
+
+                        <br/><br/><br/>
+
+                                <br/><br/><br/>
+        <br/><br/><br/>
+     
+     
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">

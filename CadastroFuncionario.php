@@ -31,17 +31,21 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Login.php">Login</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
-                              
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="CadastroPaciente.php">Cadastro de Pacientes</a>
                                 <a class="dropdown-item" href="CadastroFuncionario.php">Cadastro de Funcionários</a>
                                 <a class="dropdown-item" href="CadastroConsulta.php">Cadastro de Consultas</a>                                
                             </div>
-                            <a href="CadastroPaciente.php"></a>
-                        </li>                        
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Consulta.php">Consulta</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Relatorio.php">Relatórios</a></li>
-
+                        </li>                         
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Consulta.php">Consulta</a></li>                     
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Relatorios</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="RelatorioPaciente.php">Relatório de Pacientes</a>
+                                <a class="dropdown-item" href="RelatorioFuncionario.php">Relatório de Funcionários</a>
+                                <a class="dropdown-item" href="RelatorioConsulta.php">Relatório de Consultas</a>                                
+                            </div>
+                        </li>     
                     </ul>
                 </div>
             </div>
@@ -62,67 +66,66 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
-                        <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                        <form method="post" action="Controller/FuncionarioControllerCadastrar.php/">
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Nome completo</label>
-                                    <input class="form-control" id="name" type="text" placeholder="Nome" required="required" data-validation-required-message="Por favor, insira seu nome." />
+                                    <input class="form-control" id="name" name="nomeFuncionario" type="text" placeholder="Nome" required="required" data-validation-required-message="Por favor, insira seu nome." />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Especialidade</label>
+                                    <input class="form-control" id="name" name="especialidade" type="text" placeholder="Especialidade" required="required" data-validation-required-message="Por favor, insira seu nome." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>CPF</label>
-                                    <input class="form-control" id="cpf" type="tel" placeholder="CPF" required="required" data-validation-required-message="Por favor, digite seu CPF." />
+                                    <input class="form-control" id="cpf" name="cpf" type="tel" placeholder="CPF" required="required" data-validation-required-message="Por favor, digite seu CPF." />
                                     <p class="help-block text-danger"></p>
-                                </div>
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Data de nascimento</label>
-                                    <input class="form-control" id="datanascimento" type="date" placeholder="Data de nascimento" required="required" data-validation-required-message="Por favor, insira sua data de nascimento." />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                                <div class="control-group">
+                                </div>                            
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Endereço</label>
-                                    <input class="form-control" id="endereco" type="end" placeholder="Endereço" required="required" data-validation-required-message="Por favor, digite seu endereço." />
+                                    <input class="form-control" id="endereco" name="endereco" type="end" placeholder="Endereço" required="required" data-validation-required-message="Por favor, digite seu endereço." />
                                     <p class="help-block text-danger"></p>
                                 </div>
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Email</label>
-                                    <input class="form-control" id="email" type="email" placeholder="Email" required="required" data-validation-required-message="Por favor, insira o seu endereço de e-mail." />
-                                    <p class="help-block text-danger"></p>
+                                <div class="control-group">
+                                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                        <label>Email</label>
+                                        <input class="form-control" id="email" name="emailFuncionario" type="email" placeholder="Email" required="required" data-validation-required-message="Por favor, insira o seu endereço de e-mail." />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Telefone</label>
-                                    <input class="form-control" id="phone" type="tel" placeholder="Telefone" required="required" data-validation-required-message="Por favor, digite seu número de telefone." />
-                                    <p class="help-block text-danger"></p>
+                                <div class="control-group">
+                                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                        <label>Telefone</label>
+                                        <input class="form-control" id="phone" name="telFuncionario" type="tel" placeholder="Telefone" required="required" data-validation-required-message="Por favor, digite seu número de telefone." />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
                                 </div>
-                            </div>
-                           <div class="form-group">
-                                <select class="form-control form-control-lg" id="exampleFormControlSelect1">
-                                    <option>Tipo de Funcionário</option>
-                                    <option>Gestor(a)</option>
-                                    <option>Médico(a)</option>
-                                    <option>Secretária(o)</option>
-                                 
-                                </select>
-                               
-                            </div>                                  
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>CRM</label>
-                                    <input class="form-control" id="crm" type="CRM" placeholder="CRM" required="required" data-validation-required-message="Por favor, digite seu CRM." />
-                                    <p class="help-block text-danger"></p>
+                                <div class="form-group">
+                                    <select name="tipoFuncionario" class="form-control form-control-lg" id="exampleFormControlSelect1">
+                                        <option>Tipo de Funcionário</option>
+                                        <option>Gestor(a)</option>
+                                        <option>Médico(a)</option>
+                                        <option>Secretária(o)</option>
+
+                                    </select>
+
+                                </div>                                  
+                                <div class="control-group">
+                                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                        <label>CRM</label>
+                                        <input class="form-control" id="crm" name="crmMedico" type="CRM" placeholder="CRM" required="required" data-validation-required-message="Por favor, digite seu CRM." />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <br />
-                            <div id="success"></div>
-                            <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Cadastrar</button></div>
+                                <br />
+                                <div id="success"></div>
+                                <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Cadastrar</button></div>
                         </form>
                     </div>
                 </div>

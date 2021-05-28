@@ -27,20 +27,25 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
+                  <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Login.php">Login</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="CadastroPaciente.php">Cadastro de Pacientes</a>
-                                    <a class="dropdown-item" href="CadastroFuncionario.php">Cadastro de Funcionários</a>
-                                    <a class="dropdown-item" href="CadastroConsulta.php">Cadastro de Consultas</a>                                
-                                </div>
-                                <a href="CadastroPaciente.php"></a>
-                        </li>                        
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Consulta.php">Consulta</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Relatorio.php">Relatórios</a></li>
-
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="CadastroPaciente.php">Cadastro de Pacientes</a>
+                                <a class="dropdown-item" href="CadastroFuncionario.php">Cadastro de Funcionários</a>
+                                <a class="dropdown-item" href="CadastroConsulta.php">Cadastro de Consultas</a>                                
+                            </div>
+                        </li>                         
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Consulta.php">Consulta</a></li>                     
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Relatorios</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="RelatorioPaciente.php">Relatório de Pacientes</a>
+                                <a class="dropdown-item" href="RelatorioFuncionario.php">Relatório de Funcionários</a>
+                                <a class="dropdown-item" href="RelatorioConsulta.php">Relatório de Consultas</a>                                
+                            </div>
+                        </li>     
                     </ul>
                 </div>
             </div>
@@ -58,40 +63,40 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Contact Section Form-->
-                <div class="row">
+                <div class="row">                    
                     <div class="col-lg-8 mx-auto">
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
-                        <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                        <form method="post" action="Controller/PacienteController.php/">
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Nome</label>
-                                    <input class="form-control" id="name" type="text" placeholder="Nome" required="required" data-validation-required-message="Por favor, insira seu nome." />
+                                    <input class="form-control" name="nome" id="name" type="text" placeholder="Nome" required="required" data-validation-required-message="Por favor, insira seu nome." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Data de nascimento</label>
-                                    <input class="form-control" id="datanascimento" type="date" placeholder="Data de nascimento" required="required" data-validation-required-message="Por favor, insira sua data de nascimento." />
+                                    <input class="form-control" name="dataNascimento" id="datanascimento" type="date" placeholder="Data de nascimento" required="required" data-validation-required-message="Por favor, insira sua data de nascimento." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Email</label>
-                                    <input class="form-control" id="email" type="email" placeholder="Email" required="required" data-validation-required-message="Por favor, insira o seu endereço de e-mail." />
+                                    <input class="form-control" id="email" name="email" type="email" placeholder="Email" required="required" data-validation-required-message="Por favor, insira o seu endereço de e-mail." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Telefone</label>
-                                    <input class="form-control" id="phone" type="tel" placeholder="Telefone" required="required" data-validation-required-message="Por favor, digite seu número de telefone." />
+                                    <input class="form-control" id="phone" name="telefone" type="tel" placeholder="Telefone" required="required" data-validation-required-message="Por favor, digite seu número de telefone." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <select class="form-control form-control-lg" id="exampleFormControlSelect1">
+                                <select class="form-control form-control-lg" name="plano" id="exampleFormControlSelect1">
                                     <option>AMIL</option>
                                     <option>BRADESCO SAÚDE</option>
                                     <option>GAMA SAÚDE</option>
@@ -103,7 +108,7 @@
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Observação</label>
-                                    <textarea class="form-control" id="message" rows="5" placeholder="Observação" required="required" data-validation-required-message="Por favor, digite uma mensagem."></textarea>
+                                    <textarea class="form-control" id="message" name="obs" rows="5" placeholder="Observação" required="required" data-validation-required-message="Por favor, digite uma mensagem."></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
