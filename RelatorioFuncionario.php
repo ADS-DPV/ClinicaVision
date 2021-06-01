@@ -73,7 +73,7 @@ include_once './config/Conexao.php';
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Edição de dados</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -146,7 +146,7 @@ include_once './config/Conexao.php';
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">Código</th>
                         <th scope="col">Nome</th>
                         <th scope="col">CPF</th>
                         <th scope="col">Endereço</th>
@@ -155,8 +155,8 @@ include_once './config/Conexao.php';
                         <th scope="col">Tipo de Funcionário</th>
                         <th scope="col">CRM</th>
                         <th scope="col">Especialidade</th>
-                        <th scope="col">Botão Editar</th>
-                        <th scope="col">Botão Excluir</th>
+                        <th scope="col">Excluir</th>
+                        <th scope="col">Editar</th>
                     </tr>
                 </thead>
                 <tbody>

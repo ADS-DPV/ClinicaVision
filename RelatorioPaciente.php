@@ -140,12 +140,12 @@ include_once './config/Conexao.php';
             <table class="table table-bordered table-xg">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">Código</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Data Nascimento</th>
                         <th scope="col">Sintomas</th>
                         <th scope="col">Plano de Saúde</th>
-                        <th scope="col">Email</th>
+                        <th scope="col" align="center">Email</th>
                         <th scope="col">Telefone</th>
                         <th scope="col">Excluir</th>
                         <th scope="col">Editar</th>

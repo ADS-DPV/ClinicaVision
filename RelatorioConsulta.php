@@ -134,15 +134,15 @@ include_once './config/Conexao.php';
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">data da Consulta</th>
+                        <th scope="col">Código</th>
+                        <th scope="col">Data da Consulta</th>
                         <th scope="col">Tipo da Consulta</th>
                         <th scope="col">Especialidade</th>
                         <th scope="col">Observação</th>
                         <th scope="col">Paciente</th>
-                        <th scope="col">Funcionario</th>                                                                         
-                        <th scope="col">Botão Excluir</th>
-                        <th scope="col">Botão Editar</th>
+                        <th scope="col">Funcionário</th>                                                                         
+                        <th scope="col">Excluir</th>
+                        <th scope="col">Editar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -160,8 +160,8 @@ include_once './config/Conexao.php';
                             echo "<td>$row->tipoConsulta</td>";
                             echo "<td>$row->especialidadeConsulta</td>";
                             echo "<td>$row->obsConsulta</td>";
-                            echo "<td>$row->tbpaciente_idpaciente</td>";
-                            echo "<td>$row->tbFuncionario_idfuncionario</td>";
+                            echo "<td>$row->nome</td>";
+                            echo "<td>$row->nomeFuncionario</td>";
                             echo "<td><button type = 'SUBMIT' class = 'btn btn-danger'>X</button></td>";
                             echo "<td><button type = 'button' class = 'btn btn-info'  data-toggle='modal' data-target='#exampleModal' onclick=setaDadosModal('$row->idConsulta')>Editar</button></td></tr>";
 

@@ -321,7 +321,8 @@ class DAO {
         $pdo->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES 'utf-8'");
 
         try {
-            $sql = "SELECT * FROM consulta ";
+            $sql = "SELECT * FROM consulta INNER JOIN paciente ON idPaciente = idConsulta "
+                    . "INNER JOIN funcionario ON idFuncionario = idConsulta";
             $result = $pdo->query($sql);
             return $result;
         } catch (Exception $ex) {
