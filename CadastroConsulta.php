@@ -55,14 +55,14 @@ include_once './config/Conexao.php';
             </div>
         </nav>
         <br/><br/><br/>
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
 
         <section class="page-section" id="contact">
             <div class="container">
@@ -80,6 +80,8 @@ include_once './config/Conexao.php';
                         <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
                         <form method="post" action="Controller/ConsultaControllerCadastrar.php/">
                             <div class="form-group">
+                                <label>Paciente</label>
+
                                 <select name="idPaciente" class="form-control form-control-lg" id="exampleFormControlSelect1">
                                     <?php
                                     $daop = new DAO();
@@ -92,8 +94,8 @@ include_once './config/Conexao.php';
                                 </select>
                             </div> 
                             <div class="control-group">
+                                <label>Data da consulta</label>
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Data da consulta</label>
                                     <input class="form-control" name="datanascimento" id="datanascimento" type="date" placeholder="Data de nascimento" required="required" data-validation-required-message="Por favor, insira sua data de nascimento." />
                                     <p class="help-block text-danger"></p>
                                 </div>
@@ -123,11 +125,12 @@ include_once './config/Conexao.php';
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Observação</label>
-                                    <textarea class="form-control" name="obsConsulta" id="message" rows="5" placeholder="Observação" required="required" data-validation-required-message="Please enter a message."></textarea>
+                                    <textarea class="form-control" name="obsConsulta" id="message" rows="3" placeholder="Observação" required="required" data-validation-required-message="Please enter a message."></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label>Médico Responsável</label>
                                 <select name="idFuncionario" class="form-control form-control-lg" id="exampleFormControlSelect1">
                                     <?php
                                     $daop = new DAO();
@@ -139,7 +142,7 @@ include_once './config/Conexao.php';
                                     ?>
                                 </select>
                             </div> 
-                            
+
                             <br />
                             <div id="success"></div>
                             <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Cadastrar</button></div>
@@ -188,7 +191,7 @@ include_once './config/Conexao.php';
         <div class="copyright py-4 text-center text-white">
             <div class="container">
                 <small>
-                    Copyright &copy; Your Website
+                    Copyright &copy; Clinica Visioin
                     <!-- This script automatically adds the current year to your website footer-->
                     <!-- (credit: https://updateyourfooter.com/)-->
                     <script>

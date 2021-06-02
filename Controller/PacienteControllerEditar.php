@@ -26,10 +26,10 @@ if ($dao) {
         echo "<script>alert('Dados editados com sucesso.');</script>";
     
     echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"0;
-	  URL='../../Relatorio.php'\">";
+	  URL='../../RelatorioPaciente.php'\">";
 } else {
     echo "<script>alert('Erro...');</script>";
     echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"0;
-	  URL='../View/Relatorio.php'\">";
+	  URL='../View/RelatorioPaciente.php'\">";
 }
 

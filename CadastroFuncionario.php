@@ -52,85 +52,87 @@
         </nav>
         <br/><br/><br/>
 
-        <section class="page-section" id="contact">
-            <div class="container">
-                <!-- Contact Section Heading-->
-                <h2 class="text-center text-uppercase text-secondary mb-0">Cadastro de Funcionários</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Contact Section Form-->
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
-                        <form method="post" action="Controller/FuncionarioControllerCadastrar.php/">
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Nome completo</label>
-                                    <input class="form-control" id="name" name="nomeFuncionario" type="text" placeholder="Nome" required="required" data-validation-required-message="Por favor, insira seu nome." />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Especialidade</label>
-                                    <input class="form-control" id="name" name="especialidade" type="text" placeholder="Especialidade" required="required" data-validation-required-message="Por favor, insira seu nome." />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>CPF</label>
-                                    <input class="form-control" id="cpf" name="cpf" type="tel" placeholder="CPF" required="required" data-validation-required-message="Por favor, digite seu CPF." />
-                                    <p class="help-block text-danger"></p>
-                                </div>                            
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Endereço</label>
-                                    <input class="form-control" id="endereco" name="endereco" type="end" placeholder="Endereço" required="required" data-validation-required-message="Por favor, digite seu endereço." />
-                                    <p class="help-block text-danger"></p>
-                                </div>
+        <div style="background-image: url('assets/img/clinica.jpg');">
+            <section class="page-section" id="contact">
+                <div class="container">
+                    <!-- Contact Section Heading-->
+                    <h2 class="text-center text-uppercase text-secondary mb-0">Cadastro de Funcionários</h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Contact Section Form-->
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
+                            <form method="post" action="Controller/FuncionarioControllerCadastrar.php/">
                                 <div class="control-group">
                                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                        <label>Email</label>
-                                        <input class="form-control" id="email" name="emailFuncionario" type="email" placeholder="Email" required="required" data-validation-required-message="Por favor, insira o seu endereço de e-mail." />
+                                        <label>Nome completo</label>
+                                        <input class="form-control" id="name" name="nomeFuncionario" type="text" placeholder="Nome" required="required" data-validation-required-message="Por favor, insira seu nome." />
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                        <label>Telefone</label>
-                                        <input class="form-control" id="phone" name="telFuncionario" type="tel" placeholder="Telefone" required="required" data-validation-required-message="Por favor, digite seu número de telefone." />
+                                        <label>Especialidade</label>
+                                        <input class="form-control" id="name" name="especialidade" type="text" placeholder="Especialidade" required="required" data-validation-required-message="Por favor, insira seu nome." />
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <select name="tipoFuncionario" class="form-control form-control-lg" id="exampleFormControlSelect1">
-                                        <option>Tipo de Funcionário</option>
-                                        <option>Gestor(a)</option>
-                                        <option>Médico(a)</option>
-                                        <option>Secretária(o)</option>
+                                <div class="control-group">
+                                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                        <label>CPF</label>
+                                        <input class="form-control" id="cpf" name="cpf" type="tel" placeholder="CPF" required="required" data-validation-required-message="Por favor, digite seu CPF." />
+                                        <p class="help-block text-danger"></p>
+                                    </div>                            
+                                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                        <label>Endereço</label>
+                                        <input class="form-control" id="endereco" name="endereco" type="end" placeholder="Endereço" required="required" data-validation-required-message="Por favor, digite seu endereço." />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                            <label>Email</label>
+                                            <input class="form-control" id="email" name="emailFuncionario" type="email" placeholder="Email" required="required" data-validation-required-message="Por favor, insira o seu endereço de e-mail." />
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                            <label>Telefone</label>
+                                            <input class="form-control" id="phone" name="telFuncionario" type="tel" placeholder="Telefone" required="required" data-validation-required-message="Por favor, digite seu número de telefone." />
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <select name="tipoFuncionario" class="form-control form-control-lg" id="exampleFormControlSelect1">
+                                            <option>Tipo de Funcionário</option>
+                                            <option>Gestor(a)</option>
+                                            <option>Médico(a)</option>
+                                            <option>Secretária(o)</option>
 
-                                    </select>
+                                        </select>
 
-                                </div>                                  
-                                <div class="control-group">
-                                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                        <label>CRM</label>
-                                        <input class="form-control" id="crm" name="crmMedico" type="CRM" placeholder="CRM" required="required" data-validation-required-message="Por favor, digite seu CRM." />
-                                        <p class="help-block text-danger"></p>
+                                    </div>                                  
+                                    <div class="control-group">
+                                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                            <label>CRM</label>
+                                            <input class="form-control" id="crm" name="crmMedico" type="CRM" placeholder="CRM" required="required" data-validation-required-message="Por favor, digite seu CRM." />
+                                            <p class="help-block text-danger"></p>
+                                        </div>
                                     </div>
-                                </div>
-                                <br />
-                                <div id="success"></div>
-                                <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Cadastrar</button></div>
-                        </form>
+                                    <br />
+                                    <div id="success"></div>
+                                    <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Cadastrar</button></div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
 
         <!-- Footer-->
@@ -171,7 +173,7 @@
         <div class="copyright py-4 text-center text-white">
             <div class="container">
                 <small>
-                    Copyright &copy; Your Website
+                    Copyright &copy; Clinica Visioin
                     <!-- This script automatically adds the current year to your website footer-->
                     <!-- (credit: https://updateyourfooter.com/)-->
                     <script>

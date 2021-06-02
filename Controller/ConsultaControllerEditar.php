@@ -33,11 +33,11 @@ $dao->editaConsulta($consulta->getIdConsulta() ,$consulta->getDataConuslta(), $c
 if ($dao) {
     echo "<script>alert('Consulta editada com sucesso.');</script>";
     echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"0;
-	  URL='../../RelatorioUsuario.php'\">";
+	  URL='../../RelatorioConsulta.php'\">";
     
 } else {
     echo "<script>alert('Erro...');</script>";
     echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"0;
-	  URL='../../RelatorioUsuario.php'\">";
+	  URL='../../RelatorioConsulta.php'\">";
 }
 

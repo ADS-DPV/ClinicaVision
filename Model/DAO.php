@@ -15,7 +15,7 @@ include_once 'Funcionario.php';
  * @author pedro
  */
 class DAO {
-    
+
     //************************** CRUD DE PACIENTE *********************************************
 
     public function cadastraPaciente($nome, $email, $telefone, $plano, $observacao, $dataNascimento) {
@@ -48,7 +48,7 @@ class DAO {
         $pdo->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES 'utf-8'");
 
         try {
-        //PESQUISA OS DADOS DO BANCO    
+            //PESQUISA OS DADOS DO BANCO    
             $sql = "SELECT * FROM paciente";
             $result = $pdo->query($sql);
             return $result;
@@ -69,7 +69,7 @@ class DAO {
 
 
         try {
-        //DELETA OS DADOS DO BANCO
+            //DELETA OS DADOS DO BANCO
             $sql = "delete from paciente where idPaciente = '$idPaciente'";
             $result = $pdo->prepare($sql);
             $result->execute();
@@ -104,9 +104,8 @@ class DAO {
         $pdo = null;
     }
 
-   
     //************************** CRUD DE FUNCIONARIO *********************************************
-    
+
     public function cadastraFuncionario($nome, $tipo, $especialidade, $crm, $telefone, $email, $endereco, $cpf) {
         //INSTANCIA E ABRE CONEXÃO COM O BANCO
         $conecta = new Conexaos();
@@ -138,7 +137,7 @@ class DAO {
         $pdo->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES 'utf-8'");
 
         try {
-        //PESQUISA DADOS NO BANCO    
+            //PESQUISA DADOS NO BANCO    
             $sql = "SELECT * FROM funcionario";
             $result = $pdo->query($sql);
             return $result;
@@ -159,7 +158,7 @@ class DAO {
 
 
         try {
-        //DELETA OS DADOS DO BANCO    
+            //DELETA OS DADOS DO BANCO    
             $sql = "delete from funcionario where idFuncionario = '$idFuncionario'";
             $result = $pdo->prepare($sql);
             $result->execute();
@@ -194,9 +193,8 @@ class DAO {
         $pdo = null;
     }
 
-   
     //************************** CRUD DE USUARIO *********************************************
-    
+
     public function cadastraUsuario($login, $senha, $idFuncionario) {
         //INSTANCIA E ABRE CONEXÃO COM O BANCO
         $conecta = new Conexaos();
@@ -228,7 +226,7 @@ class DAO {
         $pdo->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES 'utf-8'");
 
         try {
-        //PESQUISA NO BANCO    
+            //PESQUISA NO BANCO    
             $sql = "SELECT * FROM usuario INNER JOIN funcionario on funcionario.idFuncionario = usuario.tbFuncionario_idfuncionario";
             $result = $pdo->query($sql);
             return $result;
@@ -249,7 +247,7 @@ class DAO {
 
 
         try {
-            
+
             $sql = "delete from usuario where idUsuario = '$idUsuario'";
             $result = $pdo->prepare($sql);
             $result->execute();
@@ -285,9 +283,7 @@ class DAO {
         }
         $pdo = null;
     }
-    
-    
-    
+
     //************************** CRUD DE CONSULTA *********************************************
 
     public function cadastraConsulta($dataConuslta, $tipoConsulta, $especialidade, $obsConsulta, $idPaciente, $idFuncionario) {
@@ -321,8 +317,9 @@ class DAO {
         $pdo->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES 'utf-8'");
 
         try {
-            $sql = "SELECT * FROM consulta INNER JOIN paciente ON idPaciente = idConsulta "
-                    . "INNER JOIN funcionario ON idFuncionario = idConsulta";
+            $sql = "SELECT * FROM consulta 
+INNER JOIN paciente 
+INNER JOIN funcionario";
             $result = $pdo->query($sql);
             return $result;
         } catch (Exception $ex) {
@@ -332,7 +329,7 @@ class DAO {
         }
         $pdo = null;
     }
-    
+
     public function excluiConsulta($idConsulta) {
         $conecta = new Conexaos();
         $pdo = $conecta->conecta();
@@ -377,6 +374,5 @@ class DAO {
         }
         $pdo = null;
     }
-
 
 }

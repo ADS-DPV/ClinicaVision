@@ -16,87 +16,86 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
+            <div style="background-image: url('assets/img/fundo1.jpg');">
     <body id="page-top">
 
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-sm bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="index.html">Clinica Vision</a>
-                <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                   <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Login.php">Login</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="CadastroPaciente.php">Cadastro de Pacientes</a>
-                                <a class="dropdown-item" href="CadastroFuncionario.php">Cadastro de Funcionários</a>
-                                <a class="dropdown-item" href="CadastroConsulta.php">Cadastro de Consultas</a>                                
-                            </div>
-                        </li>                         
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="RelatorioUsuario.php">Usuário</a></li>                     
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Relatorios</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="RelatorioPaciente.php">Relatório de Pacientes</a>
-                                <a class="dropdown-item" href="RelatorioFuncionario.php">Relatório de Funcionários</a>
-                                <a class="dropdown-item" href="RelatorioConsulta.php">Relatório de Consultas</a>                                
-                            </div>
-                        </li>     
-                    </ul>
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-sm bg-secondary text-uppercase fixed-top" id="mainNav">
+                <div class="container">
+                    <a class="navbar-brand js-scroll-trigger" href="index.html">Clinica Vision</a>
+                    <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        Menu
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Login.php">Login</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="CadastroPaciente.php">Cadastro de Pacientes</a>
+                                    <a class="dropdown-item" href="CadastroFuncionario.php">Cadastro de Funcionários</a>
+                                    <a class="dropdown-item" href="CadastroConsulta.php">Cadastro de Consultas</a>                                
+                                </div>
+                            </li>                         
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="RelatorioUsuario.php">Usuário</a></li>                     
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Relatorios</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="RelatorioPaciente.php">Relatório de Pacientes</a>
+                                    <a class="dropdown-item" href="RelatorioFuncionario.php">Relatório de Funcionários</a>
+                                    <a class="dropdown-item" href="RelatorioConsulta.php">Relatório de Consultas</a>                                
+                                </div>
+                            </li>     
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-        <br><br><br><br><br>
-        <section class="page-section">
-            <div class="container">
-                <div class="d-lg-inline justify-content-center h-100">
-                    <div class="card" style="width: 26rem; height: 25rem;">
-                        <div class="card-header">
-                            <h3>Logar</h3>                            
-                        </div>
-                        <div class="card-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Login</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="Digite seu Login">                                    
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Senha</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
-                                </div>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Salvar Senha</label>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Cadastrar</button>
-                            </form>
-                        </div>
-                        <div class="card-footer">
-                            <div class="d-flex justify-content-center links">
-                                Não tem conta?<a href="CadastroUsuario.php"> Cadastre-se</a>
+            </nav>
+            <br><br><br><br><br>
+            <section class="page-section">
+                <div class="container">
+                    <div class="d-lg-inline justify-content-center h-100">
+                        <div class="card" style="width: 26rem; height: 25rem;">
+                            <div class="card-header">
+                                <h3>Logar</h3>                            
                             </div>
-                            <div class="d-flex justify-content-center">
-                                <a href="#">Esqueceu sua senha?</a>
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Login</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="Digite seu Login">                                    
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Senha</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Salvar Senha</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center links">
+                                    Não tem conta?<a href="CadastroUsuario.php"> Cadastre-se</a>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#">Esqueceu sua senha?</a>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+
+
+                    <div class="card" style="width: 18rem;">
+
+                    </div>
                 </div>
-                       
-            
-                       
-                <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-            </div>
-        </section>
-        <br><br><br>
+            </section>
+            <br><br><br>
+
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
@@ -136,7 +135,7 @@
         <div class="copyright py-4 text-center text-white">
             <div class="container">
                 <small>
-                    Copyright &copy; Your Website
+                    Copyright &copy; Clinica Visioin
                     <!-- This script automatically adds the current year to your website footer-->
                     <!-- (credit: https://updateyourfooter.com/)-->
                     <script>
@@ -161,4 +160,6 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
+                </div>
+
 </html>
