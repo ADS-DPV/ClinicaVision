@@ -51,7 +51,7 @@
             </div>
         </nav>
         <br/><br/><br/>
-
+        <div style="background-image: url('assets/img/fundo9.jpg');">
         <section class="page-section" id="contact">
             <div class="container">
                 <!-- Contact Section Heading-->
@@ -120,8 +120,7 @@
                 </div>
             </div>
         </section>
-
-
+        </div>
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
@@ -160,7 +159,7 @@
         <div class="copyright py-4 text-center text-white">
             <div class="container">
                 <small>
-                    Copyright &copy; Clinica Visioin
+                    Copyright &copy; Clinica Vision
                     <!-- This script automatically adds the current year to your website footer-->
                     <!-- (credit: https://updateyourfooter.com/)-->
                     <script>

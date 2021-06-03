@@ -61,139 +61,154 @@ include_once './config/Conexao.php';
                     </ul>
                 </div>
             </div>
-        </nav>      
-
-        <br/><br/><br/>
-        <br/><br/><br/>
-        <br/><br/><br/>
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Edição de dados</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+        </nav>  
+        <div style="background-image: url('assets/img/fundo9.jpg');">
+            <section class="page-section" id="contact">
+                <div class="container">
+                    <!-- Contact Section Heading-->
+                    <h2 class="text-center text-uppercase text-secondary mb-0">Relatório de Funcionários</h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
                     </div>
-                    <div class="modal-body">
-                        <form method="post" action="Controller/FuncionarioControllerEditar.php/">
-                            <input class="form-control" name="idFuncionario" id="idFuncionario" type="hidden"/>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Edição de dados</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="post" action="Controller/FuncionarioControllerEditar.php/">
+                                        <input class="form-control" name="idFuncionario" id="idFuncionario" type="hidden"/>
 
 
-                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                <label>Nome completo</label>
-                                <input class="form-control" id="name" name="nomeFuncionario" type="text" placeholder="Nome" required="required" data-validation-required-message="Por favor, insira seu nome." />
-                                <p class="help-block text-danger"></p>
+                                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                            <label>Nome completo</label>
+                                            <input class="form-control" id="name" name="nomeFuncionario" type="text" placeholder="Nome" required="required" data-validation-required-message="Por favor, insira seu nome." />
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                            <label>CPF</label>
+                                            <input class="form-control" id="cpf" name="cpf" type="tel" placeholder="CPF" required="required" data-validation-required-message="Por favor, digite seu CPF." />
+                                            <p class="help-block text-danger"></p>
+                                        </div>                            
+                                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                            <label>Endereço</label>
+                                            <input class="form-control" id="endereco" name="endereco" type="end" placeholder="Endereço" required="required" data-validation-required-message="Por favor, digite seu endereço." />
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                            <label>Email</label>
+                                            <input class="form-control" id="email" name="emailFuncionario" type="email" placeholder="Email" required="required" data-validation-required-message="Por favor, insira o seu endereço de e-mail." />
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                            <label>Telefone</label>
+                                            <input class="form-control" id="phone" name="telFuncionario" type="tel" placeholder="Telefone" required="required" data-validation-required-message="Por favor, digite seu número de telefone." />
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <select name="tipoFuncionario" class="form-control form-control-lg" id="exampleFormControlSelect1">
+                                                <option>Tipo de Funcionário</option>
+                                                <option>Gestor(a)</option>
+                                                <option>Médico(a)</option>
+                                                <option>Secretária(o)</option>
+
+                                            </select>
+                                        </div>   
+
+                                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                            <label>Especialidade</label>
+                                            <input class="form-control" id="name" name="especialidade" type="text" placeholder="Especialidade" required="required" data-validation-required-message="Por favor, insira seu nome." />
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+
+                                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                            <label>CRM</label>
+                                            <input class="form-control" id="crm" name="crmMedico" type="CRM" placeholder="CRM" required="required" data-validation-required-message="Por favor, digite seu CRM." />
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Editar</button></div>
+
+
+
+
+                                    </form>    
+                                </div>
                             </div>
-                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                <label>CPF</label>
-                                <input class="form-control" id="cpf" name="cpf" type="tel" placeholder="CPF" required="required" data-validation-required-message="Por favor, digite seu CPF." />
-                                <p class="help-block text-danger"></p>
-                            </div>                            
-                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                <label>Endereço</label>
-                                <input class="form-control" id="endereco" name="endereco" type="end" placeholder="Endereço" required="required" data-validation-required-message="Por favor, digite seu endereço." />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                <label>Email</label>
-                                <input class="form-control" id="email" name="emailFuncionario" type="email" placeholder="Email" required="required" data-validation-required-message="Por favor, insira o seu endereço de e-mail." />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                <label>Telefone</label>
-                                <input class="form-control" id="phone" name="telFuncionario" type="tel" placeholder="Telefone" required="required" data-validation-required-message="Por favor, digite seu número de telefone." />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="form-group">
-                                <select name="tipoFuncionario" class="form-control form-control-lg" id="exampleFormControlSelect1">
-                                    <option>Tipo de Funcionário</option>
-                                    <option>Gestor(a)</option>
-                                    <option>Médico(a)</option>
-                                    <option>Secretária(o)</option>
-
-                                </select>
-                            </div>   
-
-                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                <label>Especialidade</label>
-                                <input class="form-control" id="name" name="especialidade" type="text" placeholder="Especialidade" required="required" data-validation-required-message="Por favor, insira seu nome." />
-                                <p class="help-block text-danger"></p>
-                            </div>
-
-                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                <label>CRM</label>
-                                <input class="form-control" id="crm" name="crmMedico" type="CRM" placeholder="CRM" required="required" data-validation-required-message="Por favor, digite seu CRM." />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Editar</button></div>
-
-                            
-
-
-                        </form>    
+                        </div>
                     </div>
-
                 </div>
+            </section>
+
+
+
+            <div class="container">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Código</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">CPF</th>
+                            <th scope="col">Endereço</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Telefone</th>
+                            <th scope="col">Tipo de Funcionário</th>
+                            <th scope="col">CRM</th>
+                            <th scope="col">Especialidade</th>
+                            <th scope="col">Excluir</th>
+                            <th scope="col">Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <?php
+                            $daop = new DAO();
+                            $result = $daop->pesquisaFuncionario();
+
+                            while ($row = $result->fetch(PDO::FETCH_OBJ)) {
+                                "<input class='form-control' name='idFuncionario' type='hidden' value='$row->idfuncionario'";
+                                echo '<form method="post" action="Controller/FuncionarioControllerExcluir.php/">';
+                                echo "<input class='form-control' name='idFuncionario' type='hidden' value='$row->idfuncionario'";
+                                echo "<tr><th>$row->idfuncionario</td>";
+                                echo "<td>$row->nomeFuncionario</td>";
+                                echo "<td>$row->cpf</td>";
+                                echo "<td>$row->endereco</td>";
+                                echo "<td>$row->emailFuncionario</td>";
+                                echo "<td>$row->TelFuncionario</td>";
+                                echo "<td>$row->TipoFuncionario</td>";
+                                echo "<td>$row->crmMedico</td>";
+                                echo "<td>$row->especialidade</td>";
+                                echo "<td><button type = 'SUBMIT' class = 'btn btn-danger'>X</button></td>";
+                                echo "<td><button type = 'button' class = 'btn btn-info'  data-toggle='modal' data-target='#exampleModal' onclick=setaDadosModal('$row->idfuncionario')>Editar</button></td></tr>";
+
+                                echo '</form>';
+                            }
+                            ?>
+
+                        </tr>    
+                    </tbody>
+                </table>
             </div>
+        
+        <br/><br/><br/>
+        <br/><br/><br/>
+        <br/><br/><br/>
+        <br/><br/><br/>
+
+        <br/><br/><br/>
+
+        <br/><br/><br/>
+        
+
         </div>
-
-
-        <div class="container">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th scope="col">Código</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">CPF</th>
-                        <th scope="col">Endereço</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Telefone</th>
-                        <th scope="col">Tipo de Funcionário</th>
-                        <th scope="col">CRM</th>
-                        <th scope="col">Especialidade</th>
-                        <th scope="col">Excluir</th>
-                        <th scope="col">Editar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <?php
-                        $daop = new DAO();
-                        $result = $daop->pesquisaFuncionario();
-
-                        while ($row = $result->fetch(PDO::FETCH_OBJ)) {
-                            "<input class='form-control' name='idFuncionario' type='hidden' value='$row->idfuncionario'";
-                            echo '<form method="post" action="Controller/FuncionarioControllerExcluir.php/">';
-                            echo "<input class='form-control' name='idFuncionario' type='hidden' value='$row->idfuncionario'";
-                            echo "<tr><th>$row->idfuncionario</td>";
-                            echo "<td>$row->nomeFuncionario</td>";
-                            echo "<td>$row->cpf</td>";
-                            echo "<td>$row->endereco</td>";
-                            echo "<td>$row->emailFuncionario</td>";
-                            echo "<td>$row->TelFuncionario</td>";
-                            echo "<td>$row->TipoFuncionario</td>";
-                            echo "<td>$row->crmMedico</td>";
-                            echo "<td>$row->especialidade</td>";
-                            echo "<td><button type = 'SUBMIT' class = 'btn btn-danger'>X</button></td>";
-                            echo "<td><button type = 'button' class = 'btn btn-info'  data-toggle='modal' data-target='#exampleModal' onclick=setaDadosModal('$row->idfuncionario')>Editar</button></td></tr>";
-
-                            echo '</form>';
-                        }
-                        ?>
-
-                    </tr>    
-                </tbody>
-            </table>
-        </div>
-        <br/><br/><br/>
-
-        <br/><br/><br/>
-        <br/><br/><br/>
-        <br/><br/><br/>
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
@@ -233,7 +248,7 @@ include_once './config/Conexao.php';
         <div class="copyright py-4 text-center text-white">
             <div class="container">
                 <small>
-                    Copyright &copy; Clinica Visioin
+                    Copyright &copy; Clinica Vision
                     <!-- This script automatically adds the current year to your website footer-->
                     <!-- (credit: https://updateyourfooter.com/)-->
                     <script>

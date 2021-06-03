@@ -60,9 +60,10 @@ include_once './config/Conexao.php';
                     </ul>
                 </div>
             </div>
-        </nav>      
+        </nav> 
+        <div style="background-image: url('assets/img/fundo9.jpg');">
 
-<!-- Modal -->
+        <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -75,7 +76,7 @@ include_once './config/Conexao.php';
                     <div class="modal-body">
                         <form method="post" action="Controller/ConsultaControllerEditar.php/">
                             <input class="form-control" name="idConsulta" id="idConsulta" type=""/>
-                             <div class="control-group">
+                            <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Data da consulta</label>
                                     <input class="form-control" name="datanascimento" id="datanascimento" type="date" placeholder="Data de nascimento" required="required" data-validation-required-message="Por favor, insira sua data de nascimento." />
@@ -111,78 +112,85 @@ include_once './config/Conexao.php';
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
-                            
-                            
+
+
                             <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Editar</button></div>
 
                         </form>    
                     </div>
-                   
+
                 </div>
             </div>
         </div>
-        
-        
-        
-<br/><br/><br/>
-        <br/><br/><br/><br/><br/><br/>
-        <br/><br/><br/><br/><br/><br/>
+
+        <section class="page-section" id="contact">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="text-center text-uppercase text-secondary mb-0">Relatório de Consultas</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <br/><br/><br/>      
+
+
+                <div class="container-lg">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Data da Consulta</th>
+                                <th scope="col">Tipo da Consulta</th>
+                                <th scope="col">Especialidade</th>
+                                <th scope="col">Observação</th>
+                                <th scope="col">Paciente</th>
+                                <th scope="col">Funcionário</th>                                                                         
+                                <th scope="col">Excluir</th>
+                                <th scope="col">Editar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <?php
+                                $daop = new DAO();
+                                $result = $daop->pesquisaConsulta();
+
+                                while ($row = $result->fetch(PDO::FETCH_OBJ)) {
+                                    "<input class='form-control' name='idUsuario' type='' value='$row->idConsulta'";
+                                    echo '<form method="post" action="Controller/ConsultaControllerExcluir.php/">';
+                                    echo "<input class='form-control' name='idConsulta' type='hidden' value='$row->idConsulta'";
+                                    echo "<tr><th>$row->idConsulta</td>";
+                                    echo "<td>$row->dataConsulta</td>";
+                                    echo "<td>$row->tipoConsulta</td>";
+                                    echo "<td>$row->especialidadeConsulta</td>";
+                                    echo "<td>$row->obsConsulta</td>";
+                                    echo "<td>$row->nome</td>";
+                                    echo "<td>$row->nomeFuncionario</td>";
+                                    echo "<td><button type = 'SUBMIT' class = 'btn btn-danger'>X</button></td>";
+                                    echo "<td><button type = 'button' class = 'btn btn-info'  data-toggle='modal' data-target='#exampleModal' onclick=setaDadosModal('$row->idConsulta')>Editar</button></td></tr>";
+
+                                    echo '</form>';
+                                }
+                                ?>
+                            </tr>    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <br/><br/><br/>
+        <br/><br/><br/>
+        <br/><br/><br/>
         <br/><br/><br/>
 
-
-        <div class="container-lg">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th scope="col">Código</th>
-                        <th scope="col">Data da Consulta</th>
-                        <th scope="col">Tipo da Consulta</th>
-                        <th scope="col">Especialidade</th>
-                        <th scope="col">Observação</th>
-                        <th scope="col">Paciente</th>
-                        <th scope="col">Funcionário</th>                                                                         
-                        <th scope="col">Excluir</th>
-                        <th scope="col">Editar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                         <?php
-                        $daop = new DAO();
-                        $result = $daop->pesquisaConsulta();
-
-                        while ($row = $result->fetch(PDO::FETCH_OBJ)) {
-                            "<input class='form-control' name='idUsuario' type='' value='$row->idConsulta'";
-                            echo '<form method="post" action="Controller/ConsultaControllerExcluir.php/">';
-                            echo "<input class='form-control' name='idConsulta' type='hidden' value='$row->idConsulta'";
-                            echo "<tr><th>$row->idConsulta</td>";
-                            echo "<td>$row->dataConsulta</td>";
-                            echo "<td>$row->tipoConsulta</td>";
-                            echo "<td>$row->especialidadeConsulta</td>";
-                            echo "<td>$row->obsConsulta</td>";
-                            echo "<td>$row->nome</td>";
-                            echo "<td>$row->nomeFuncionario</td>";
-                            echo "<td><button type = 'SUBMIT' class = 'btn btn-danger'>X</button></td>";
-                            echo "<td><button type = 'button' class = 'btn btn-info'  data-toggle='modal' data-target='#exampleModal' onclick=setaDadosModal('$row->idConsulta')>Editar</button></td></tr>";
-
-                            echo '</form>';
-                        }
-                        ?>
-                    </tr>    
-                </tbody>
-            </table>
-        </div>
         <br/><br/><br/>
-        <br/><br/><br/>
-        <br/><br/><br/>
-                <br/><br/><br/>
 
-                        <br/><br/><br/>
-
-                                <br/><br/><br/>
         <br/><br/><br/>
-     
-     
+       
+
+    </div>
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
@@ -222,11 +230,11 @@ include_once './config/Conexao.php';
         <div class="copyright py-4 text-center text-white">
             <div class="container">
                 <small>
-                    Copyright &copy; Clinica Visioin
+                    Copyright &copy; Clinica Vision
                     <!-- This script automatically adds the current year to your website footer-->
                     <!-- (credit: https://updateyourfooter.com/)-->
                     <script>
-                        document.write(new Date().getFullYear());
+    document.write(new Date().getFullYear());
                     </script>
                 </small>
             </div>

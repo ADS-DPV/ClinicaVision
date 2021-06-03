@@ -54,63 +54,64 @@ include_once './config/Conexao.php';
                 </div>
             </div>
         </nav>
-        <br/><br/><br/>
-
-        <section class="page-section" id="contact">           
-            <div class="container">
-                <!-- Contact Section Heading-->
-                <h2 class="text-center text-uppercase text-secondary mb-0">Cadastro de Usuario</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Contact Section Form-->
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
-                        <form method="post" action="Controller/UsuarioControllerCadastrar.php/">                           
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Login</label>
-                                    <input class="form-control" id="login" name="login" type="text" placeholder="Login" required="required" data-validation-required-message="Por favor, insira seu Login." />
-                                    <p class="help-block text-danger"></p>
+        
+        <div style="background-image: url('assets/img/fundo9.jpg');">
+            <section class="page-section" id="contact">           
+                <div class="container">
+                    <!-- Contact Section Heading-->
+                    <h2 class="text-center text-uppercase text-secondary mb-0">Cadastro de Usuário</h2>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Contact Section Form-->
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
+                            <form method="post" action="Controller/UsuarioControllerCadastrar.php/">                           
+                                <div class="control-group">
+                                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                        <label>Login</label>
+                                        <input class="form-control" id="login" name="login" type="text" placeholder="Login" required="required" data-validation-required-message="Por favor, insira seu Login." />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>                                                                                
+                                <div class="control-group">
+                                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                        <label>Senha</label>
+                                        <input class="form-control" id="senha" name="senha" type="password" placeholder="Senha" required="required" data-validation-required-message="Por favor, insira sua Senha." />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
                                 </div>
-                            </div>                                                                                
-                            <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Senha</label>
-                                    <input class="form-control" id="senha" name="senha" type="password" placeholder="Senha" required="required" data-validation-required-message="Por favor, insira sua Senha." />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Funcionário</label>
-                                <select name="idFuncionario" class="form-control form-control-lg" id="exampleFormControlSelect1">
-                                    <?php
-                                    $daop = new DAO();
-                                    $result = $daop->pesquisaFuncionario();
+                                <br>
+                                <div class="form-group">
+                                    <label>Funcionário</label>
+                                    <select name="idFuncionario" class="form-control form-control-lg" id="exampleFormControlSelect1">
+                                        <?php
+                                        $daop = new DAO();
+                                        $result = $daop->pesquisaFuncionario();
 
-                                    while ($row = $result->fetch(PDO::FETCH_OBJ)) {
-                                        echo "<option value='$row->idfuncionario'>$row->nomeFuncionario</option>";
-                                    }
-                                    ?>
+                                        while ($row = $result->fetch(PDO::FETCH_OBJ)) {
+                                            echo "<option value='$row->idfuncionario'>$row->nomeFuncionario</option>";
+                                        }
+                                        ?>
 
-                                </select>
-                            </div>  
+                                    </select>
+                                </div>  
 
 
 
-                            <br />
-                            <div id="success"></div>
-                            <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Cadastrar</button></div>
-                        </form>
+                                <br />
+                                <div id="success"></div>
+                                <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Cadastrar</button></div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
+            </section>
+        </div>
 
         <!-- Footer-->
         <footer class="footer text-center">
@@ -150,7 +151,7 @@ include_once './config/Conexao.php';
         <div class="copyright py-4 text-center text-white">
             <div class="container">
                 <small>
-                    Copyright &copy; Clinica Visioin
+                    Copyright &copy; Clinica Vision
                     <!-- This script automatically adds the current year to your website footer-->
                     <!-- (credit: https://updateyourfooter.com/)-->
                     <script>

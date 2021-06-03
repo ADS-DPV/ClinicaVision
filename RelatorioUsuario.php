@@ -62,13 +62,19 @@ include_once './config/Conexao.php';
                 </div>
             </div>
         </nav>      
-
-        <br/><br/><br/>
-        <br/><br/><br/>
-        <br/><br/><br/>
-
-
-        <!-- Modal -->
+        <div style="background-image: url('assets/img/fundo9.jpg');">
+        <section class="page-section" id="contact">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="text-center text-uppercase text-secondary mb-0">Cadastro de Usuários</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                  
+                <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -101,10 +107,12 @@ include_once './config/Conexao.php';
 
                         </form>    
                     </div>
-
+                </div>
                 </div>
             </div>
         </div>
+        </section>
+                        
         <div class="container">               
             <a href="CadastroUsuario.php"><div class="form-group"><button class="btn btn-primary btn-lg">Cadastrar Novo Usuário</button></div></a>
         </div>
@@ -145,11 +153,17 @@ include_once './config/Conexao.php';
                 </tbody>
             </table>
         </div>
+            
+        <br/><br/><br/>
+        <br/><br/><br/>
+        <br/><br/><br/>
         <br/><br/><br/>
 
         <br/><br/><br/>
+
         <br/><br/><br/>
-        <br/><br/><br/>
+        
+        </div>
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
@@ -189,7 +203,7 @@ include_once './config/Conexao.php';
         <div class="copyright py-4 text-center text-white">
             <div class="container">
                 <small>
-                    Copyright &copy; Clinica Visioin
+                    Copyright &copy; Clinica Vision
                     <!-- This script automatically adds the current year to your website footer-->
                     <!-- (credit: https://updateyourfooter.com/)-->
                     <script>

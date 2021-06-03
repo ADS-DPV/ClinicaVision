@@ -61,12 +61,19 @@ include_once './config/Conexao.php';
                     </ul>
                 </div>
             </div>
-        </nav>      
-
-        <br/><br/><br/>
-        <br/><br/><br/>
-        <br/><br/><br/>
-
+        </nav>
+        <div style="background-image: url('assets/img/fundo9.jpg');">
+        <section class="page-section" id="contact">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="text-center text-uppercase text-secondary mb-0">Relatório de Pacientes</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+       
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -130,10 +137,11 @@ include_once './config/Conexao.php';
 
                         </form>    
                     </div>
-                   
+                </div>
                 </div>
             </div>
         </div>
+        </section>
 
 
         <div class="container">
@@ -182,9 +190,12 @@ include_once './config/Conexao.php';
             </table>
         </div>
         <br/><br/><br/>
+        <br/><br/><br/>
+        <br/><br/><br/>
+        <br/><br/><br/>
 
         <br/><br/><br/>
-        <br/><br/><br/>
+
         <br/><br/><br/>
         <!-- Footer-->
         <footer class="footer text-center">
@@ -225,7 +236,7 @@ include_once './config/Conexao.php';
         <div class="copyright py-4 text-center text-white">
             <div class="container">
                 <small>
-                    Copyright &copy; Clinica Visioin
+                    Copyright &copy; Clinica Vision
                     <!-- This script automatically adds the current year to your website footer-->
                     <!-- (credit: https://updateyourfooter.com/)-->
                     <script>
