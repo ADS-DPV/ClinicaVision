@@ -16,7 +16,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <div style="background-image: url('assets/img/fundo5.jpg');">
+    <div style="background-image: url('assets/img/fundo9.jpg');">
         <body id="page-top">
 
             <!-- Navigation-->

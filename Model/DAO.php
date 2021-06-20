@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-include_once '../config/Conexao.php';
+
 include_once 'Paciente.php';
 include_once 'Funcionario.php';
 
@@ -34,7 +34,7 @@ class DAO {
         } catch (Exception $ex) {
             //Execção caso se encontre erro na inserção
             $result = "ERRO:" . $ex->getMessage();
-            echo "<script>alert('Usuário cadastrado com sucesso.');</script>";
+            echo "<script>alert('Paciente cadastrado com sucesso.');</script>";
             return $result;
         }
         $pdo = null;
@@ -122,7 +122,7 @@ class DAO {
         } catch (Exception $ex) {
             //Execção caso se encontre erro na inserção
             $result = "ERRO:" . $ex->getMessage();
-            echo "<script>alert('Usuário cadastrado com sucesso.');</script>";
+            echo "<script>alert('Funcionário cadastrado com sucesso.');</script>";
             return $result;
         }
         $pdo = null;

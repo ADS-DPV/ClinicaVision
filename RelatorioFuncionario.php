@@ -62,6 +62,7 @@ include_once './config/Conexao.php';
                 </div>
             </div>
         </nav>  
+        <br/><br/><br/>
         <div style="background-image: url('assets/img/fundo9.jpg');">
             <section class="page-section" id="contact">
                 <div class="container">
@@ -126,13 +127,13 @@ include_once './config/Conexao.php';
 
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                             <label>Especialidade</label>
-                                            <input class="form-control" id="name" name="especialidade" type="text" placeholder="Especialidade" required="required" data-validation-required-message="Por favor, insira seu nome." />
+                                            <input class="form-control" id="name" name="especialidade" type="text" placeholder="Especialidade"/>
                                             <p class="help-block text-danger"></p>
                                         </div>
 
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                             <label>CRM</label>
-                                            <input class="form-control" id="crm" name="crmMedico" type="CRM" placeholder="CRM" required="required" data-validation-required-message="Por favor, digite seu CRM." />
+                                            <input class="form-control" id="crm" name="crmMedico" type="CRM" placeholder="CRM"/>
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Editar</button></div>

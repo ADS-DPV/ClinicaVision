@@ -108,7 +108,7 @@
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Observação</label>
-                                    <textarea class="form-control" id="message" name="obs" rows="5" placeholder="Observação" required="required" data-validation-required-message="Por favor, digite uma mensagem."></textarea>
+                                    <textarea class="form-control" id="message" name="obs" rows="5" placeholder="Observação"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>

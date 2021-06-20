@@ -17,7 +17,7 @@ $dao = new DAO();
 $dao->cadastraPaciente($paciente->getNome(), $paciente->getEmail(), $paciente->getTelefone(), $paciente->getPlano(),
         $paciente->getObservacao(), $paciente->getDataNascimento());
 if ($dao) {
-        echo "<script>alert('Usuário cadastrado com sucesso.');</script>";
+        echo "<script>alert('Paciente cadastrado com sucesso.');</script>";
     
     echo "<META HTTP-EQUIV='REFRESH' CONTENT=\"0;
 	  URL='../../RelatorioPaciente.php'\">";
